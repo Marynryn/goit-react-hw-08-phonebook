@@ -1,8 +1,9 @@
-
-
-import Form from '../components/Form/Form';
-import Filter from './Filter/Filter';
-import { ListContacts } from './ListContacts/ListContacts';
+import { Route, Routes } from 'react-router-dom';
+import AppBar from './AppBar/AppBar';
+import Home from 'pages/Home/Home';
+import Register from 'pages/Register/Register';
+import Login from 'pages/Login/Login';
+import Contacts from 'pages/Contacts/Contacts';
 
 export function App() {
 
@@ -18,11 +19,15 @@ export function App() {
         color: '#010101',
       }}
     >
-      <h1 style={{ fontSize: 48 }}>Phonebook</h1>
-      <Form />
-      <h2 style={{ fontSize: 46 }}>Contacts</h2>
-      <Filter />
-      <ListContacts />
+      <AppBar />
+
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contacts" element={<Contacts />} />
+      </Routes>
+
     </div>
   );
 }

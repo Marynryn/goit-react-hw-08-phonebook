@@ -6,9 +6,7 @@ export default function Home() {
         <div style={css.container}>
             <h1 style={css.title}>
                 Welcome to your phonebook{' '}
-                <span role="img" aria-label="Greeting icon">
-                    💁‍♀️
-                </span>
+
             </h1>
         </div>
     );

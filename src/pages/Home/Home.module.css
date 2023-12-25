@@ -1,6 +1,8 @@
 .title {
   text-align: center;
-  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  font-size: 72px;
   font-weight: 600;
   font-family: 'DM Sans', sans - serif;
   color: #eae4f0;
@@ -12,6 +14,6 @@
   min-height: calc(100vh - 50px);
   display: flex;
   align-items: center;
-  justify-content: centerl;
+  justify-content: center;
   background: #f69a73;
 }

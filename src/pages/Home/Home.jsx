@@ -5,12 +5,16 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        background: "#f69a73",
     },
     title: {
         fontWeight: 500,
         fontSize: 48,
         textAlign: 'center',
     },
+
+
+
 };
 
 export default function Home() {

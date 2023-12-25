@@ -1,32 +1,18 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { Suspense } from "react";
+import { Navigation } from '../Navigation/Navigation';
+import { UserMenu } from '../UserMenu/UserMenu';
+import { AuthNav } from '../AuthNav/AuthNav';
+import { useAuth } from 'hooks';
+import css from "./AppBar.module.css"
 
+export const AppBar = () => {
+    const { isLoggedIn } = useAuth();
 
-const AppBar = () => {
     return (
         <>
-            <header>
-                <ul>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/register">Register</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/login">Login</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/">Home</NavLink>
-                    </li>
-
-                </ul>
+            <header className={css.header}>
+                <Navigation />
+                {isLoggedIn ? <UserMenu /> : <AuthNav />}
             </header>
-            <main>
-                <Suspense fallback={<div>loading ...</div>}>
-                    <Outlet />
-                </Suspense>
-            </main>
         </>
     )
 }

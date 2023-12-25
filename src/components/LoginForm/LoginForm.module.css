@@ -114,9 +114,3 @@ body {
 input {
   width: 200 px;
 }
-
-input:hover,
-input:focus {
-  border-color: transparent;
-  outline: none;
-}

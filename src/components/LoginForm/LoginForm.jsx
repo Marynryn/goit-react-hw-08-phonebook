@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import css from 'components/Form/Form.module.css';
+import css from 'components/LoginForm/LoginForm.module.css';
 import { useDispatch } from "react-redux"
 import { login } from 'store/operations';
 
@@ -28,35 +28,39 @@ const LoginForm = () => {
 
         <div>
             <div className="form">
-                <form className={css.form_phonebook}
+                <form className={css.decor}
                     onSubmit={handleSubmit}
                 >
+                    <div className={css.form_left_decoration}></div>
+                    <div className={css.form_right_decoration}></div>
+                    <div className={css.circle}></div>
+                    <div className={css.form_inner}>
+                        <label htmlFor={emailId} className={css.label_number}>
+                            <h2 className={css.form_number}>Email</h2>
+                            <input
+                                type="email"
+                                name="email"
 
-                    <label htmlFor={emailId} className={css.label_number}>
-                        <h2 className={css.form_number}>Email</h2>
-                        <input
-                            type="email"
-                            name="email"
+                                id={emailId}
+                                required
+                            />
+                        </label>
+                        <label htmlFor={passwordId} className={css.label_number}>
+                            <h2 className={css.form_number}>Password</h2>
+                            <input
+                                type="text"
+                                name="password"
+                                pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+                                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
 
-                            id={emailId}
-                            required
-                        />
-                    </label>
-                    <label htmlFor={passwordId} className={css.label_number}>
-                        <h2 className={css.form_number}>Password</h2>
-                        <input
-                            type="text"
-                            name="password"
-                            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-                            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-
-                            id={passwordId}
-                            required
-                        />
-                    </label>
-                    <button className="button_submit" type="submit">
-                        Login
-                    </button>
+                                id={passwordId}
+                                required
+                            />
+                        </label>
+                        <button className={css.button_submit} type="submit">
+                            Login
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -12,7 +12,7 @@ const Contact = () => {
     <ul className={css.list}>
       {filterName.map((contact, createAt) => (
         <li key={createAt} className={css.contact}>
-          {contact.name}: {contact.phone}{' '}
+          {contact.name} <br /> {contact.number}{' '}
           <button
             type="button"
             className={css.button_delete}

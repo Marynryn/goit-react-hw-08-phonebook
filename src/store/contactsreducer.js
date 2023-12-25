@@ -22,6 +22,7 @@ const mySlice = createSlice({
         state.contacts.isLoading = true;
       })
       .addCase(fetchContacts.fulfilled, (state, action) => {
+        
         state.contacts.isLoading = false;
         state.error = null;
         state.contacts.items = action.payload;
@@ -33,10 +34,10 @@ const mySlice = createSlice({
       .addCase(postContact.pending, (state, action) => {
         state.contacts.isLoading = true;
       })
-      .addCase(postContact.fulfilled, (state, { payload }) => {
+      .addCase(postContact.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.error = null;
-        state.contacts.items.push(payload);
+        state.contacts.items.push(action.payload);
       })
       .addCase(postContact.rejected, (state, action) => {
         state.contacts.isLoading = false;

@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import css from 'components/Form/Form.module.css';
+import css from 'components/RegisterForm/RegisterForm.module.css';
 import { useDispatch } from "react-redux"
 import { userPost } from 'store/operations';
 
@@ -28,45 +28,50 @@ const RegisterForm = () => {
 
         <div>
             <div className="form">
-                <form className={css.form_phonebook}
+                <form className={css.decor}
                     onSubmit={handleSubmit}
                 >
-                    <label htmlFor={nameId} className={css.label}>
-                        <h2 className={css.form_name}>Name</h2>
-                        <input
-                            type="text"
-                            name="name"
-                            pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                            required
-                            id={nameId}
-                        />
-                    </label>
-                    <label htmlFor={emailId} className={css.label_number}>
-                        <h2 className={css.form_number}>Email</h2>
-                        <input
-                            type="email"
-                            name="email"
+                    <div className={css.form_left_decoration}></div>
+                    <div className={css.form_right_decoration}></div>
+                    <div className={css.circle}></div>
+                    <div className={css.form_inner}>
+                        <label htmlFor={nameId} className={css.label}>
+                            <h2 className={css.form_name}>Name</h2>
+                            <input
+                                type="text"
+                                name="name"
+                                pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                                required
+                                id={nameId}
+                            />
+                        </label>
+                        <label htmlFor={emailId} className={css.label_number}>
+                            <h2 className={css.form_number}>Email</h2>
+                            <input
+                                type="email"
+                                name="email"
 
-                            id={emailId}
-                            required
-                        />
-                    </label>
-                    <label htmlFor={passwordId} className={css.label_number}>
-                        <h2 className={css.form_number}>Password</h2>
-                        <input
-                            type="text"
-                            name="password"
-                            pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
-                            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                                id={emailId}
+                                required
+                            />
+                        </label>
+                        <label htmlFor={passwordId} className={css.label_number}>
+                            <h2 className={css.form_number}>Password</h2>
+                            <input
+                                type="text"
+                                name="password"
+                                pattern="\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}"
+                                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
 
-                            id={passwordId}
-                            required
-                        />
-                    </label>
-                    <button className="button_submit" type="submit">
-                        register
-                    </button>
+                                id={passwordId}
+                                required
+                            />
+                        </label>
+                        <button className={css.button_submit} type="submit">
+                            Registration
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

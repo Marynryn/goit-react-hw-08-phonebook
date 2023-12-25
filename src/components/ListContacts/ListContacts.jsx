@@ -17,7 +17,7 @@ export const ListContacts = () => {
   }, [dispatch]);
   const loading = useSelector(selectIsLoading)
 
-  console.log(loading)
+
   return (<div className={css.list}>
     {loading ? <Loader /> : <Contact />
     }</div>)

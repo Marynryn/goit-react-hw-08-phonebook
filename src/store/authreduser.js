@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
   error: null,
 };
-console.log(initialState);
+
 const myAuth = createSlice({
   name: 'auth',
   initialState,
